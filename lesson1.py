@@ -28,16 +28,6 @@
 #   23, 544, 34              #вивело в консолі
 #################################################################################
 
-
-# st = 'as 23 fdfdg544 34'
-# a = ''
-# num = ''
-#
-# for ch in st:
-#     if ch.isdigit():
-#         num += ch
-#     else:
-#         num += ' '
 #
 #
 # print(num)
@@ -160,77 +150,13 @@ list = [22, 3, 5, 2, 8, 2, -23, 8, 23, 5]
 # print(l)
 
 # 2) вивести на екран пустий квадрат з "*" сторона якого вказана як агрумент функції
-# def sq(n):
-#     for i in range(n):
-#         if i == 0 or i == n - 1:
-#             print('*' * n)
-#         else:
-#             print('*' + ' ' * (n-2) + '*')
-#
-# sq(5)
+
 
 
 # 3) вывести табличку множення за допомогою цикла while
 
-# i = 1
-# while i < 10:
-#     j = 1
-#     while j < 10:
-#         result = i * j
-#         print('  'if result//10 else '   ',end='')
-#         print(result, end=' ')
-#         j+=1
-#     i += 1
-#     print()
+
 # 4) переробити це завдання під меню
 
-while True:
-    print('1) знайти мін число')
-    print('2) видалити усі дублікати')
-    print('3) замінити кожне 4-те значення на x')
-    print('4) вивести на екран пустий квадрат з "*" сторона якого вказана як агрумент функції')
-    print('5) вывести табличку множення за допомогою цикла while')
-    print('6) Вийти в головне меню')
-    answer = input('Оберіть номер: ')
-    if answer == '1':
-        list = [22, 3, 5, 2, 8, 2, -23, 8, 23, 5]
-        print(min(list))
-    elif answer == '2':
-        list = [22, 3, 5, 2, 8, 2, -23, 8, 23, 5]
-        numbers = []
-        [numbers.append(num) for num in list if num not in numbers]
-        print(numbers)
-    elif answer == '3':
-        list = [22, 3, 5, 2, 8, 2, -23, 8, 23, 5]
-        l = []
-        for i,p in enumerate(list):
-            if not (i+1) % 4:
-                l.append('X')
-            else:
-                l.append(p)
-        print(l)
-    elif answer == '4':
-        def sq(n):
-            for i in range(n):
-                if i == 0 or i == n - 1:
-                    print('*' * n)
-                else:
-                    print('*' + ' ' * (n - 2) + '*')
 
-
-        sq(5)
-    elif answer == '5':
-        i = 1
-        while i < 10:
-            j = 1
-            while j < 10:
-                result = i * j
-                print('  ' if result // 10 else '   ', end='')
-                print(result, end=' ')
-                j += 1
-            i += 1
-            print()
-    elif answer == '6':
-        break
-    print('  ')
 
