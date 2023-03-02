@@ -29,28 +29,28 @@ def show_shopping_list(shopping_list):
 
 
 def sum_shopping_list(list):
-    a = []
+    sum_price = []
     for ch in list:
-        q = ch.get('price')
-        a.append(q)
-    print(sum(a))
+        price = ch.get('price')
+        sum_price.append(price)
+    print(sum(sum_price))
 
 
 def max_shopping_list(list):
-    a = []
+    max_price = []
     for ch in list:
-        q = ch.get('price')
-        a.append(q)
-    print(max(a))
+        price = ch.get('price')
+        max_price.append(price)
+    print(max(max_price))
 
 
 def search(list):
     info = input('Enter name: ')
     for ch in list:
-        x = ch.get('name')
-        y = ch.get('price')
-        if x == info:
-            print('name:', x, 'price:', y)
+        name = ch.get('name')
+        price = ch.get('price')
+        if name == info:
+            print('name:', name, 'price:', price)
 
 
 def menu():
