@@ -19,9 +19,12 @@ shopping_list = [
 def add_shopping(list):
     name = input('Enter name: ')
     price = input('Enter price: ')
-    price = int(price)
-    list.append({'name': name, 'price': price})
-    print(list)
+    if price.isdigit():
+        price = int(price)
+        list.append({'name': name, 'price': price})
+        print(list)
+    else:
+        input('price must be a number')
 
 
 def show_shopping_list(shopping_list):
