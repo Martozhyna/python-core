@@ -157,7 +157,7 @@ class Main:
 
 
 book1 = Book('Prince')
-book2 = Book('Princes')
+book2 = Book('Princess')
 
 Main.add(book1)
 Main.add(book2)
