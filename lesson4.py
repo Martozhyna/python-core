@@ -84,10 +84,11 @@ class ShoppingBook:
     def __init__(self, file_name):
         self.file_name = file_name
         self.shopping_list = []
-        self.id_name = self.__gen_id()
+        self.id_name = self.create_id()
+        self.read()
 
     @staticmethod
-    def __gen_id():
+    def create_id():
         id_name = 1
         while True:
             yield id_name
@@ -134,19 +135,26 @@ class ShoppingBook:
             print(f'{i} - {value}')
 
         choice = int(input('По чому шукатимемо?'))
-        sch = input('search...')
+        srch = input('search...')
 
         for item in self.shopping_list:
-            if str(item[keys[choice]]) == sch:
+            if str(item[keys[choice]]) == srch:
                 print(item)
-
 
     def max_shopping_list(self):
         max_price = []
         for ch in self.shopping_list:
-            price = ch.get('price')
+            price = ch.get("price")
             max_price.append(price)
         print(max(max_price))
+
+    def delete_by_id(self):
+        chose_id = input('choose id')
+        chose_id = int(chose_id)
+        find_id = next((i for i, q in enumerate(self.shopping_list) if q['id'] == chose_id))
+        self.shopping_list.pop(find_id)
+        self.write()
+        print(self.shopping_list)
 
     def menu(self):
         while True:
@@ -168,7 +176,12 @@ class ShoppingBook:
                     self.search()
                 case '4':
                     self.max_shopping_list()
+                case '5':
+                    self.delete_by_id()
+                case '6':
+                    break
 
 
 s = ShoppingBook('shopping_list.json')
 s.menu()
+
