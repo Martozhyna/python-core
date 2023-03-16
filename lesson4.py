@@ -4,12 +4,12 @@ import json
 
 try:
     with open('emails.txt', 'r') as file:
-        gmail = open('gmail_emails.txt', 'w')
-        for line in file:
-            email = line.split()
-            if email[1].endswith('@gmail.com'):
-                gmail.write(f'{email[1]}\n')
-        gmail.close()
+        with open('gmail_emails.txt', 'w') as gmail:
+            for line in file:
+                email = line.split()
+                if email[1].endswith('@gmail.com'):
+                    gmail.write(f'{email[1]}\n')
+            gmail.close()
 except Exception as err:
     print(err)
 
@@ -184,4 +184,3 @@ class ShoppingBook:
 
 s = ShoppingBook('shopping_list.json')
 s.menu()
-
